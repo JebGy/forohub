@@ -39,4 +39,62 @@ La autenticación se implementa con **JSON Web Tokens (JWT)**.
 Flujo:
 1. Realiza el **login** con credenciales válidas en `/login`.
 2. Recibe un token JWT.
-3. Incluye el token en el header de las peticiones:
+3. Incluye el token en el header de las peticiones de los demás endpoints
+
+
+---
+
+## 🛠 Endpoints Disponibles
+
+### 🔑 **Autenticación**
+| Método | Endpoint   | Descripción             |
+|--------|-----------|--------------------------|
+| POST   | `/login` | Generar token JWT       |
+
+---
+
+### 📌 **Tópicos**
+| Método | Endpoint             | Descripción                |
+|--------|----------------------|---------------------------|
+| GET    | `/topicos`          | Listar todos los tópicos |
+| GET    | `/topicos/{id}`     | Obtener un tópico por ID |
+| POST   | `/topicos/agregar`  | Crear un nuevo tópico    |
+| PUT    | `/topicos/{id}`     | Actualizar un tópico     |
+| DELETE | `/topicos/{id}`     | Eliminar un tópico       |
+
+---
+
+### 👤 **Usuarios**
+| Método | Endpoint              | Descripción             |
+|--------|----------------------|-------------------------|
+| POST   | `/usuarios/agregar` | Registrar un usuario   |
+
+---
+
+### 🗨 **Respuestas**
+| Método | Endpoint                | Descripción             |
+|--------|-------------------------|-------------------------|
+| POST   | `/respuestas/agregar`  | Agregar una respuesta  |
+
+---
+
+### 🛡 **Perfiles**
+| Método | Endpoint              | Descripción             |
+|--------|----------------------|-------------------------|
+| POST   | `/perfiles/agregar` | Crear un nuevo perfil  |
+
+---
+
+### 📚 **Cursos**
+| Método | Endpoint             | Descripción            |
+|--------|---------------------|------------------------|
+| POST   | `/cursos/agregar`  | Registrar un curso    |
+
+---
+
+## 📂 Esquemas Principales
+Algunos DTOs definidos:
+- **TopicoDTO**: id, título, mensaje, cursoId.
+- **UsuarioDTO**: id, nombre, correo, perfilId.
+- **RespuestaDTO**: id, mensaje, topicoId.
+- **CursoDTO**: id, nombre, descripción.
